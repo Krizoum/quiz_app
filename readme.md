@@ -10,5 +10,5 @@ and past it in "YOUR-API-KEY"
 
 ```javascript
 let myHeaders = new Headers();
-myHeaders.append("X-Api-Key", "YOUR-API-KEY");
+myHeaders.append("X-Api-Key", "YOUR-API-KEY"){:target= "\_blank"};
 ```
