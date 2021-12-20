@@ -1,0 +1,80 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Source Code Pro", monospace;
+  background-image: radial-gradient(#aaa, #000);
+  background-image: url(../images/black_background_fabric-wallpaper-2560x1600.jpg);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+main {
+  // height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 80%;
+  margin: 2rem auto;
+}
+
+.timer {
+  margin: 2rem;
+  // border: 7px solid #ffc700;
+  background: conic-gradient(#ffc700 76%, #212121 76%);
+  padding: 1rem;
+  border-radius: 50%;
+  position: relative;
+  background-color: #aaa;
+  width: 80px;
+  height: 80px;
+
+  .insaid-timer {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: #0b0b0d;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 2;
+  }
+}
+
+.answers {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  gap: 1rem;
+  width: 100%;
+  margin: 1rem;
+
+  .answer {
+    text-align: center;
+    background-color: #212121;
+    border: 3px solid transparent;
+    border-radius: 15px;
+    padding: 0.8rem;
+    // font-weight: bold;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: #d4d4d4;
+
+    &:hover {
+      border: 3px solid #ffc700;
+    }
+  }
+}
+
+@import "media";

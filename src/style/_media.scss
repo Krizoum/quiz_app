@@ -1,0 +1,12 @@
+@media (max-width: 600px) {
+  .question h2 {
+    font-size: 1rem;
+  }
+  .answers {
+    grid-template-columns: auto;
+
+    .answer {
+      font-size: 0.9rem;
+    }
+  }
+}

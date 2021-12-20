@@ -1,0 +1,108 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Source Code Pro", monospace;
+  background-image: radial-gradient(#aaa, #000);
+  background-image: url(../images/black_background_fabric-wallpaper-2560x1600.jpg);
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  margin: 2rem auto;
+}
+
+.timer {
+  margin: 2rem;
+  background: conic-gradient(#ffc700 76%, #212121 76%);
+  padding: 1rem;
+  border-radius: 50%;
+  position: relative;
+  background-color: #aaa;
+  width: 80px;
+  height: 80px;
+}
+
+.timer .insaid-timer {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: #0b0b0d;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 2;
+}
+
+.answers {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+  gap: 1rem;
+  width: 100%;
+  margin: 1rem;
+}
+
+.answers .answer {
+  text-align: center;
+  background-color: #212121;
+  border: 3px solid transparent;
+  border-radius: 15px;
+  padding: 0.8rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #d4d4d4;
+}
+
+.answers .answer:hover {
+  border: 3px solid #ffc700;
+}
+
+@media (max-width: 600px) {
+  .question h2 {
+    font-size: 1rem;
+  }
+  .answers {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+  .answers .answer {
+    font-size: 0.9rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */
