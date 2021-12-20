@@ -10,7 +10,7 @@ let score = 0,
   timeLeft = 15,
   time;
 let myHeaders = new Headers();
-myHeaders.append("X-Api-Key", "AI7UYeItIPymcQbbqYL7i2XgGwX4yco0odUeZfGs");
+myHeaders.append("X-Api-Key", "YOUR-API-KEY");
 var requestOptions = {
   method: "GET",
   redirect: "follow",
