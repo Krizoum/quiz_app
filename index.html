@@ -17,7 +17,10 @@
     <title>quiz app</title>
   </head>
   <body>
-    <main>
+    <div class="loader hidden">
+      <div class="inside-loader"></div>
+    </div>
+    <main class="hidden">
       <div class="score">score : 10</div>
       <div class="timer"><div class="insaid-timer"></div></div>
       <div class="question">
@@ -31,6 +34,11 @@
       </div>
       <div class="counter">question 02</div>
     </main>
+    <section class="start">
+      <button id="start">Start Game</button>
+      <button id="score">View Score</button>
+    </section>
+    <div class="container hidden"></div>
     <script src="app/script.js "></script>
   </body>
 </html>

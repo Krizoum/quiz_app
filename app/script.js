@@ -3,7 +3,11 @@ let timer = document.querySelector(".timer"),
   answers = document.querySelector(".answers"),
   scoreContainer = document.querySelector(".score"),
   counter = document.querySelector(".counter"),
-  main = document.querySelector("main");
+  main = document.querySelector("main"),
+  gameButton = document.querySelector("#start"),
+  scoreButton = document.querySelector("#score"),
+  loader = document.querySelector(".loader"),
+  container = document.querySelector(".container");
 
 let score = 0,
   correntQuestion = 1,
@@ -18,13 +22,23 @@ var requestOptions = {
 };
 let quiz;
 
-fetch("https://quizapi.io/api/v1/questions?tags=JavaScript", requestOptions)
-  .then((response) => response.text())
-  .then((result) => (quiz = JSON.parse(result)))
-  .catch((error) => console.log("error", error))
-  .then(() => {
-    startApp(quiz);
-  });
+function start() {
+  fetch("https://quizapi.io/api/v1/questions?tags=JavaScript", requestOptions)
+    .then((response) => response.text())
+    .then((result) => (quiz = JSON.parse(result)))
+    .catch((error) => console.log("error", error))
+    .then(() => {
+      startApp(quiz);
+    });
+}
+
+function startApp(quiz) {
+  correntQuestion = 1;
+  loader.classList.add("hidden");
+  container.classList.add("hidden");
+  main.classList.remove("hidden");
+  loadQuestion(quiz);
+}
 
 function startTime() {
   let i = timeLeft * 10;
@@ -42,13 +56,13 @@ function startTime() {
   }, 100);
 }
 
-function startApp(quiz) {
-  loadQuestion(quiz);
-}
-
 function loadQuestion(quiz) {
   if (correntQuestion > quiz.length) {
-    main.innerHTML = `<h1>Game Over</h1><h2>score : ${score}</h2>`;
+    main.classList.add("hidden");
+    container.classList.remove("hidden");
+    container.innerHTML = `<h1>Game Over</h1><h2>score : ${score}</h2>`;
+    gameButton.innerHTML = "continue playing";
+    container.appendChild(gameButton);
   } else {
     counter.innerText = `${correntQuestion}/${quiz.length}`;
     question.innerText = quiz[correntQuestion - 1].question;
@@ -69,7 +83,6 @@ answers.addEventListener("click", (i) => {
   for (let a = 0; a < rightAnswer.length; a++) {
     if (rightAnswer[a] == "true") {
       if (i.target.innerText == answers.children[a].textContent) {
-        console.log("great");
         score++;
         scoreContainer.innerText = `score : ${score} `;
       }
@@ -79,4 +92,18 @@ answers.addEventListener("click", (i) => {
   correntQuestion++;
   clearInterval(time);
   loadQuestion(quiz);
+});
+
+scoreButton.addEventListener("click", () => {
+  scoreButton.parentElement.classList.add("hidden");
+  container.classList.remove("hidden");
+  container.innerHTML = `<h1>Game Over</h1><h2>score : ${score}</h2>`;
+  container.appendChild(gameButton);
+});
+
+gameButton.addEventListener("click", () => {
+  gameButton.parentElement.classList.add("hidden");
+  loader.classList.remove("hidden");
+  start();
+  console.log("start clicked");
 });

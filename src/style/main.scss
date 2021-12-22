@@ -16,7 +16,9 @@ body {
   height: 100vh;
 }
 
-main {
+main,
+.start,
+.container {
   // height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,6 +26,29 @@ main {
   align-items: center;
   width: 80%;
   margin: 2rem auto;
+}
+
+#start,
+#score {
+  text-align: center;
+  background-color: #212121;
+  border: 3px solid transparent;
+  border-radius: 15px;
+  padding: 0.8rem;
+  // font-weight: bold;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #d4d4d4;
+  margin: 1rem;
+
+  &:hover {
+    border: 3px solid #ffc700;
+    transform: scale(1.1);
+  }
+}
+
+.hidden {
+  display: none;
 }
 
 .timer {
@@ -73,7 +98,48 @@ main {
 
     &:hover {
       border: 3px solid #ffc700;
+      transform: scale(1.1);
     }
+  }
+}
+.loader {
+  margin: 2rem;
+  // border: 7px solid #ffc700;
+  background: conic-gradient(#ffc700 25%, #212121 25%);
+  padding: 1rem;
+  border-radius: 50%;
+  position: relative;
+  background-color: #aaa;
+  width: 80px;
+  height: 80px;
+  animation: Loader 1s linear infinite;
+
+  .inside-loader {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: #0b0b0d;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 2;
+  }
+}
+@keyframes Loader {
+  0% {
+    background: conic-gradient(#ffc700 90deg, #212121 90deg);
+    transform: rotate(-45deg);
+  }
+  // 50% {
+  //   background: conic-gradient(#ffc700 100deg, #212121 100deg);
+  //   // transform: rotate(120deg);
+  // }
+  100% {
+    background: conic-gradient(#ffc700 90deg, #212121 90deg);
+    transform: rotate(315deg);
   }
 }
 
