@@ -7,8 +7,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Source Code Pro", monospace;
-  background-image: radial-gradient(#aaa, #000);
-  background-image: url(../images/black_background_fabric-wallpaper-2560x1600.jpg);
+  background-color: #0b0b0d;
   color: white;
   display: flex;
   justify-content: center;
@@ -141,6 +140,13 @@ main,
     background: conic-gradient(#ffc700 90deg, #212121 90deg);
     transform: rotate(315deg);
   }
+}
+
+#creater {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  font-size: 0.65rem;
 }
 
 @import "media";
