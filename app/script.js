@@ -1,3 +1,5 @@
+//comment
+
 let timer = document.querySelector(".timer"),
   question = document.querySelector(".question h2"),
   answers = document.querySelector(".answers"),
